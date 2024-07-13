@@ -22,7 +22,7 @@ import { getParticipant } from "./routes/get-participant";
 const app = fastify();
 
 app.register(cors, {
-  origin: "*",
+  origin: "https://nlw-journey-trilha-react.vercel.app",
 });
 
 app.setValidatorCompiler(validatorCompiler);
