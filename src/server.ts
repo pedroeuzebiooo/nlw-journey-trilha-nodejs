@@ -5,7 +5,7 @@ import {
   serializerCompiler,
   validatorCompiler,
 } from "fastify-type-provider-zod";
-import { ConfirmTrip } from "./routes/confirm-trip";
+import { confirmTrip } from "./routes/confirm-trip";
 import { errorHandler } from "./error-handler";
 import { env } from "./env";
 
@@ -21,7 +21,7 @@ app.setSerializerCompiler(serializerCompiler);
 app.setErrorHandler(errorHandler);
 
 app.register(createTrip);
-app.register(ConfirmTrip);
+app.register(confirmTrip);
 
 app.listen({ port: env.PORT }).then(() => {
   console.log("Server running!");
