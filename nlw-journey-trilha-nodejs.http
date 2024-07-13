@@ -1,13 +1,77 @@
-POST http://localhost:3333/trips HTTP/1.1
-content-type: application/json
+POST http://localhost:3333/trips
+Content-Type: application/json
 
 {
-  "destination": "São Paulo",
-  "starts_at": "2024-07-20 18:00:00",
-  "ends_at": "2024-07-27 18:00:00",
+  "destination": "Fortaleza",
+  "starts_at": "2024-07-27 18:00:00",
+  "ends_at": "2024-08-27 18:00:00",
   "owner_name": "Pedro Euzebio",
   "owner_email": "pedro.euzebio@teste.com.br",
   "emails_to_invite": [
       "alany.maria@teste.com.br"
   ]
 }
+
+###
+
+GET http://localhost:3333/trips/ca14c3fa-0766-4729-8313-cb80586057d1
+
+###
+
+GET http://localhost:3333/trips/ca14c3fa-0766-4729-8313-cb80586057d1/confirm
+
+###
+
+PUT http://localhost:3333/trips/ca14c3fa-0766-4729-8313-cb80586057d1
+Content-Type: application/json
+
+{
+  "destination": "Ceará",
+  "starts_at": "2024-08-20 18:00:00",
+  "ends_at": "2024-10-27 18:00:00",
+}
+
+### 
+
+GET http://localhost:3333/trips/ca14c3fa-0766-4729-8313-cb80586057d1/participants
+
+###
+
+POST http://localhost:3333/trips/ca14c3fa-0766-4729-8313-cb80586057d1/invites
+Content-Type: application/json
+
+{
+  "email": "kelvin.matheus@teste.com.br"
+}
+
+###
+
+GET http://localhost:3333/participants/f7e7ce87-ee16-47b1-8bdb-94d49fce16a8/confirm
+
+###
+
+POST http://localhost:3333/trips/ca14c3fa-0766-4729-8313-cb80586057d1/activities
+Content-Type: application/json
+
+{
+  "occurs_at": "2024-09-15 18:00:00",
+  "title": "Tomar sorvete"
+}
+
+###
+
+GET http://localhost:3333/trips/ca14c3fa-0766-4729-8313-cb80586057d1/activities
+
+###
+
+POST http://localhost:3333/trips/ca14c3fa-0766-4729-8313-cb80586057d1/links
+Content-Type: application/json
+
+{
+  "title": "Teste de Link",
+  "url": "https://teste.com.br"
+}
+
+###
+
+GET http://localhost:3333/trips/ca14c3fa-0766-4729-8313-cb80586057d1/links
