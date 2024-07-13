@@ -1,11 +1,13 @@
 import fastify from "fastify";
 import cors from "@fastify/cors";
-import { CreateTrip } from "./routes/create-trip";
+import { createTrip } from "./routes/create-trip";
 import {
   serializerCompiler,
   validatorCompiler,
 } from "fastify-type-provider-zod";
 import { ConfirmTrip } from "./routes/confirm-trip";
+import { errorHandler } from "./error-handler";
+import { env } from "./env";
 
 const app = fastify();
 
@@ -16,9 +18,11 @@ app.register(cors, {
 app.setValidatorCompiler(validatorCompiler);
 app.setSerializerCompiler(serializerCompiler);
 
-app.register(CreateTrip);
+app.setErrorHandler(errorHandler);
+
+app.register(createTrip);
 app.register(ConfirmTrip);
 
-app.listen({ port: 3333 }).then(() => {
+app.listen({ port: env.PORT }).then(() => {
   console.log("Server running!");
 });
