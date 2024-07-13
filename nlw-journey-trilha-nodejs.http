@@ -1,0 +1,13 @@
+POST http://localhost:3333/trips HTTP/1.1
+content-type: application/json
+
+{
+  "destination": "São Paulo",
+  "starts_at": "2024-07-20 18:00:00",
+  "ends_at": "2024-07-27 18:00:00",
+  "owner_name": "Pedro Euzebio",
+  "owner_email": "pedro.euzebio@teste.com.br",
+  "emails_to_invite": [
+      "alany.maria@teste.com.br"
+  ]
+}
