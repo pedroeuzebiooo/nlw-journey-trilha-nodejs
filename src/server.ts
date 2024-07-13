@@ -8,6 +8,7 @@ import {
 import { confirmTrip } from "./routes/confirm-trip";
 import { errorHandler } from "./error-handler";
 import { env } from "./env";
+import { confirmParticipants } from "./routes/confirm-participants";
 
 const app = fastify();
 
@@ -22,6 +23,7 @@ app.setErrorHandler(errorHandler);
 
 app.register(createTrip);
 app.register(confirmTrip);
+app.register(confirmParticipants);
 
 app.listen({ port: env.PORT }).then(() => {
   console.log("Server running!");
