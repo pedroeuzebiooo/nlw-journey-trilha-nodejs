@@ -43,6 +43,6 @@ app.register(updateTrip);
 app.register(getTripDetails);
 app.register(getParticipant);
 
-app.listen({ port: env.PORT || 3333 }).then(() => {
+app.listen({ port: Number(env.PORT) || 3333, host: "0.0.0.0" }).then(() => {
   console.log("Server running!");
 });
