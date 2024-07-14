@@ -58,7 +58,7 @@
 ## ❓ Sobre
 
 <p align="justify">
-  O projeto é um site desktop para montar planos de viagem com amigos, registrar atividades e links úteis.
+  Back-end em NodeJS da aplicação plann.er construída durante o NLW Journey da Rocketseat. O projeto é um site desktop para montar planos de viagem com amigos, registrar atividades e links úteis.
 </p>
 
 ## 🛠️ Tecnologias
